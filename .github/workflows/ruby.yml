@@ -13,5 +13,5 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - run: npm install -g nyc
+      - run: npm install nyc
       - run: bundle exec rake test:all
