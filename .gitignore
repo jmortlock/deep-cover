@@ -9,8 +9,10 @@ Gemfile.lock
 /core_gem/pkg/
 /spec/reports/
 /tmp/
+/vendor/
 .idea
 .sass-cache
+.ruby-version
 
 # rspec failure tracking
 .rspec_status
