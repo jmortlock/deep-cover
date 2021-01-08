@@ -1,0 +1,17 @@
+name: Build and Test
+on: [push, pull_request]
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: ["2.1", "2,2", "2,3", "2,4", "2.5", "2.6", "2.7", "3.0", "ruby-head"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+      - run: npm install -g nyc
+      - run: bundle exec rake test:all
